@@ -7,9 +7,10 @@ export const experience: Experience[] = [
     period: "Nov 2024 – Present",
     title: "Senior Software Engineer",
     highlights: [
-      "Leading Quill — an AI medical-legal review platform processing 150k+ docs with RAG retrieval and multi-agent orchestration.",
-      "Migrated a legacy monolith to event-driven microservices (FastAPI, Celery, Redis, pgvector) deployed on Kubernetes.",
-      "Built a multi-agent PoC with LangGraph; integrated Langfuse for real-time LLM observability and prompt tuning.",
+      "Leading Quill — an AI-powered medical-legal review platform: designed scalable microservices (FastAPI, Celery, Redis, pgvector) for RAG-based retrieval across 150k+ docs, deployed on Kubernetes.",
+      "Modernized a legacy monolith into a modular, horizontally scalable architecture with stateless services, async task queues, and layered design patterns.",
+      "Built a multi-agent orchestration framework (LangGraph) and integrated Langfuse for real-time LLM observability and prompt tuning.",
+      "Applied distributed systems principles — state decoupling, async processing, and layered architecture — to improve throughput and system reliability.",
     ],
   },
   {
@@ -18,9 +19,10 @@ export const experience: Experience[] = [
     period: "Jul 2022 – Nov 2024",
     title: "Software Development Engineer",
     highlights: [
-      "Cut API response times from 60s → <500ms across 50+ endpoints via Python concurrency and Elasticsearch optimisation.",
-      "Onboarded and monitored 1500+ government servers; built Kafka event streams and Kubernetes KPI microservices.",
-      "Achieved ~100% network topology visibility through ARP data collection pipelines and graph visualisation.",
+      "Optimized 50+ FastAPI endpoints from 60s → <500ms using Python concurrency, connection pooling, and Elasticsearch query restructuring.",
+      "Built Kafka-based real-time data pipelines and Kubernetes KPI microservices for monitoring 1500+ government servers.",
+      "Designed ARP data collection pipelines achieving ~100% network topology visibility for project-wide network graphs.",
+      "Developed high-performance FastAPI microservices for real-time Kubernetes cluster monitoring across all levels.",
     ],
   },
 ];

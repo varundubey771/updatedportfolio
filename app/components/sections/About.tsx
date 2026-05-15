@@ -54,7 +54,7 @@ export function About({ setHovering }: AboutProps) {
                 <strong style={{ color: "var(--text)" }}>ZS Associates</strong>{" "}
                 I build AI-powered enterprise tooling; before that at{" "}
                 <strong style={{ color: "var(--text)" }}>Jio</strong> I owned
-                large-scale network intelligence infrastructure.
+                large-scale cloud observability modules.
               </p>
               <a
                 href="https://docs.google.com/document/d/1zONOvPZMG0a4zGpZel6r0mduLhkxmYtbjl64KGY9AQI/edit?pli=1&tab=t.0"
