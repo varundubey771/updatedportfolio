@@ -6,6 +6,7 @@ interface AboutProps {
   setHovering: (v: boolean) => void;
 }
 
+
 export function About({ setHovering }: AboutProps) {
   return (
     <section
