@@ -172,7 +172,7 @@ export function ProjectsSection({ dark, setHovering }: ProjectsSectionProps) {
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-1.5 font-semibold no-underline"
-                      style={{ color: "var(--accent)", fontSize: 13, cursor: "none" }}
+                      style={{ color: "var(--accent)", fontSize: 13 }}
                     >
                       View Project <ExternalIcon />
                     </a>

@@ -5,8 +5,12 @@ export const metadata: Metadata = {
   title: "Varun Dubey - Portfolio",
   description: "Personal portfolio of Varun Dubey",
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-192x192.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/favicon-128x128.png",
   },
 };
 

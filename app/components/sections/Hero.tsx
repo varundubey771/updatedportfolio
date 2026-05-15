@@ -89,7 +89,6 @@ export function Hero({ dark, go, setHovering }: HeroProps) {
               style={{
                 padding: "13px 28px",
                 fontSize: 14,
-                cursor: "none",
                 fontFamily: "inherit",
                 background:
                   "linear-gradient(135deg, var(--accent), var(--grad-end))",
@@ -106,20 +105,11 @@ export function Hero({ dark, go, setHovering }: HeroProps) {
               style={{
                 padding: "13px 28px",
                 fontSize: 14,
-                cursor: "none",
                 fontFamily: "inherit",
                 background: "none",
                 border: "1.5px solid var(--border)",
                 color: "var(--muted)",
                 transition: "border-color 0.2s, color 0.2s",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.borderColor = "var(--accent)";
-                e.currentTarget.style.color = "var(--accent)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.borderColor = "var(--border)";
-                e.currentTarget.style.color = "var(--muted)";
               }}
             >
               About Me

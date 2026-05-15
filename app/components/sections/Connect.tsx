@@ -77,21 +77,10 @@ export function Connect({ setHovering }: ConnectProps) {
                 style={{
                   padding: "11px 20px",
                   fontSize: 14,
-                  cursor: "none",
                   background: "var(--accent-soft)",
                   color: "var(--accent)",
                   border: "1px solid var(--border)",
                   transition: "background 0.2s, transform 0.2s",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background = "var(--accent)";
-                  e.currentTarget.style.color = "var(--btn-text)";
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = "var(--accent-soft)";
-                  e.currentTarget.style.color = "var(--accent)";
-                  e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
                 {icon} {label}
@@ -111,7 +100,6 @@ export function Connect({ setHovering }: ConnectProps) {
             style={{
               padding: "13px 26px",
               fontSize: 14,
-              cursor: "none",
               background:
                 "linear-gradient(135deg, var(--accent), var(--grad-end))",
               color: "var(--btn-text)",

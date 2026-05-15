@@ -67,7 +67,6 @@ export function About({ setHovering }: AboutProps) {
                 style={{
                   padding: "11px 22px",
                   fontSize: 14,
-                  cursor: "none",
                   background:
                     "linear-gradient(135deg, var(--accent), var(--grad-end))",
                   color: "var(--btn-text)",

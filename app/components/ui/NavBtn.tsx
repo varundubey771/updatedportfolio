@@ -75,10 +75,10 @@ export function NavBtn({
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         className="inline-flex p-0"
-        style={{ background: "none", border: "none", cursor: "none" }}
+        style={{ background: "none", border: "none" }}
         aria-label={label}
       >
-        <span style={{ ...innerStyle, cursor: "none" }}>
+        <span style={innerStyle}>
           {icon}
           {tooltip}
         </span>
@@ -94,10 +94,10 @@ export function NavBtn({
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       className="inline-flex no-underline"
-      style={{ textDecoration: "none", cursor: "none" }}
+      style={{ textDecoration: "none" }}
       aria-label={label}
     >
-      <span style={{ ...innerStyle, cursor: "none" }}>
+      <span style={innerStyle}>
         {icon}
         {tooltip}
       </span>

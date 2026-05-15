@@ -86,7 +86,6 @@ export function TopHeader({
                 border: `1px solid ${
                   active ? "var(--border)" : "transparent"
                 }`,
-                cursor: "none",
                 padding: "5px 10px",
                 fontSize: 11,
                 fontWeight: 500,
@@ -107,7 +106,6 @@ export function TopHeader({
           style={{
             background: "none",
             border: "1px solid var(--border)",
-            cursor: "none",
             padding: "5px 9px",
             color: "var(--muted)",
             transition: "border-color 0.2s, color 0.2s",
