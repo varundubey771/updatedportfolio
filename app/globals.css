@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
+/* ─── Theme CSS Custom Properties ─────────────────────────────────────────── */
+/* These are set via JS on the :root / [data-theme="dark"] element             */
+/* Tailwind classes below reference these via arbitrary value syntax           */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:        #faf6ef;
+  --bg-alt:    #f2ebe0;
+  --surface:   #ffffff;
+  --text:      #261a0e;
+  --muted:     #7a6045;
+  --accent:    #9e6535;
+  --grad-end:  #b07840;
+  --accent-soft: rgba(158, 101, 53, 0.09);
+  --border:    rgba(158, 101, 53, 0.14);
+  --nav-bg:    rgba(250, 246, 239, 0.92);
+  --btn-text:  #ffffff;
+  --tag-text:  #6e3e18;
+  --shadow:    0 12px 48px rgba(0, 0, 0, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="dark"] {
+  --bg:        #0e0b08;
+  --bg-alt:    #0a0806;
+  --surface:   #181310;
+  --text:      #e8ddd0;
+  --muted:     #8a7565;
+  --accent:    #c49a6c;
+  --grad-end:  #d4a878;
+  --accent-soft: rgba(196, 154, 108, 0.12);
+  --border:    rgba(196, 154, 108, 0.14);
+  --nav-bg:    rgba(14, 11, 8, 0.92);
+  --btn-text:  #0e0b08;
+  --tag-text:  #d4b890;
+  --shadow:    0 12px 48px rgba(0, 0, 0, 0.55);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.4s, color 0.4s;
+}
+
+body, a, button, span {
+  cursor: none !important;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent) 27%, transparent);
+  border-radius: 4px;
+}
+
+/* ─── Utility classes ─────────────────────────────────────────────────────── */
+.serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.grad-text {
+  background: linear-gradient(135deg, var(--accent), var(--grad-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(-1%, 2%); }
+  50%      { transform: translate(2%, -1%); }
+  75%      { transform: translate(-2%, 1%); }
+}
+
+.float {
+  animation: floatY 4s ease-in-out infinite;
+}
+
+.lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.lift:hover {
+  transform: translateY(-5px);
+}
+
+/* ─── Grain overlay ───────────────────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 998;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px;
+  animation: grain 8s steps(10) infinite;
+}
+
+[data-theme="dark"] .grain-overlay {
+  opacity: 0.03;
+}
+.grain-overlay {
+  opacity: 0.015;
+}
+
+/* ─── Header nav: responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .header-nav button:not(:last-child) { display: none !important; }
+  .side-nav { display: none !important; }
+  .mobile-bar { display: flex !important; }
+  body { padding-bottom: 90px; }
+  .header-subtitle { display: none !important; }
+}
+
+@media (min-width: 769px) {
+  .mobile-bar { display: none !important; }
+  .header-subtitle { display: block !important; }
+}
+
+@media (max-width: 960px) {
+  .header-nav button:not(:last-child) {
+    font-size: 10px !important;
+    padding: 4px 7px !important;
+  }
 }
